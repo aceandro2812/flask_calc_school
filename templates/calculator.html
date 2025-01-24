@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h1>Calculator</h1>
+    <div class="display">
+      <input type="text" id="expression" value="{{ result or '' }}">
+    </div>
+    <div class="buttons">
+      <button type="button" onclick="document.getElementById('expression').value += '7'">7</button>
+      <button type="button" onclick="document.getElementById('expression').value += '8'">8</button>
+      <button type="button" onclick="document.getElementById('expression').value += '9'">9</button>
+      <button type="button" onclick="document.getElementById('expression').value += '+'">+</button>
+      <br>
+      <button type="button" onclick="document.getElementById('expression').value += '4'">4</button>
+      <button type="button" onclick="document.getElementById('expression').value += '5'">5</button>
+      <button type="button" onclick="document.getElementById('expression').value += '6'">6</button>
+      <button type="button" onclick="document.getElementById('expression').value += '-'">-</button>
+      <br>
+      <button type="button" onclick="document.getElementById('expression').value += '1'">1</button>
+      <button type="button" onclick="document.getElementById('expression').value += '2'">2</button>
+      <button type="button" onclick="document.getElementById('expression').value += '3'">3</button>
+      <button type="button" onclick="document.getElementById('expression').value += '*'">*</button>
+      <br>
+      <button type="button" onclick="document.getElementById('expression').value = ''">C</button>
+      <button type="button" onclick="document.getElementById('expression').value += '0'">0</button>
+      <button type="button" onclick="document.getElementById('expression').value += '.'">.</button>
+      <button type="button" onclick="/">=</button>
+    </div>
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
